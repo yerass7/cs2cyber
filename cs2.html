@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Киберспорт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282c34;
+            color: #f8f9fa;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin-left: 20px;
+        }
+        .exit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .exit-btn img {
+            width: 40px;
+            height: 40px;
+        }   
+        nav {
+            background-color: #495057;
+            padding: 5px;
+            text-align: center;
+        }
+        nav a { 
+            background-color: #black;
+            color: #f8f9fa;
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 5px; 
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #6c757d;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #495057; 
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            color: #f8f9fa;
+            transition: background-color 0.3s ease;
+            border-radius: 5px; 
+
+        }
+
+        .dropdown button:hover {
+            background-color: #6c757d; 
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #495057;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px; 
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+            border-radius: 5px; 
+        }
+
+        .dropdown-content a:hover {
+            background-color: #6c757d;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            cursor: pointer;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #6c757d;
+        }
+
+        main {-+
+            padding: 20px;
+             align-items: center
+        }
+        .hero img {
+            border: 3px solid #ffdd57;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 350px;
+            width: 1300px
+            
+        }
+        section {
+            text-align: center;
+            margin-top: 30px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ffdd57;
+            text-shadow: 1px 1px 5px #000;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            width: 100%;
+        }
+        .category {
+            width: 220px;
+            margin-bottom: 20px;
+            background-color: #495057;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .category img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .footer-links div {
+            width: 30%;
+            text-align: left;
+        }
+        .footer-links div h4 {
+            margin-bottom: 10px;
+            color: #ffdd57;
+        }
+        .footer-links div p {
+            color: #d1d1d1;
+        }
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .category a {
+            color: #ffdd57;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .category a:hover {
+            text-decoration: underline;
+        }
+        .slider-section {
+        text-align: center;
+        margin-top: 50px;
+        }
+        .slider-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .slider {
+        overflow: hidden;
+        width: 1200px;
+        height: 350px;
+        display: flex;
+        border-radius: 15px;
+        border: 1.8px solid gray;
+        box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide {
+        min-width: 100%;
+        transition: transform 0.4s ease-in-out;
+        }
+
+        .slide img {
+        width: 100%;
+        height: 100%;   
+        }
+
+        .nav-btn {
+        background-color: #ffdd57;
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        }
+
+        .nav-btn:hover {
+        background-color: red;
+        }
+
+        #prev {
+        position: absolute;
+        left: 100px;
+        }
+
+        #next {
+        position: absolute;
+        right: 100px;
+        }
+
+        .content-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 70px; 
+        margin-top: 200px;   
+        }
+
+        .left-section {
+        display: flex;
+        margin-left: 200px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        color: white;
+        text-align: left;
+        max-width: 1000px;
+        }
+
+        .left-section h1 {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 10px;
+        margin-left: 20px;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .left-section p {
+        font-size: 30px;
+        margin: 10px 20px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        .left-section .try-button {
+        background-color: #ffc300;
+        color: white;
+        margin-left: 20px;
+        margin-top: 10px;
+        padding: 15px 100px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        transition: background-color 0.3s;
+        }
+
+        .left-section .try-button:hover {
+        background-color: #fb8500;
+        }
+
+        .floating-skins {
+        display: flex;
+        gap: 100px;
+        position: relative;
+        }
+
+        .Chill   {
+        position: relative;
+        width: 300px;
+        text-align: center;
+        transform-style: preserve-3d;
+        animation: floating 3s ease-in-out infinite;
+        }
+
+        .Chill img {
+        width: 70%;
+        transform-origin: center;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+        }
+
+        .Chill:hover img {
+        transform: scale(1.1) rotateY(10deg);
+        }
+
+        .Chill p {
+        margin-top: 30px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes floating {
+        0%, 100% {
+            transform: translateY(0) rotateX(0deg) rotateZ(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotateX(5deg) rotateZ(2deg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CS2 Киберспорт</h1>
+          <a href="C:\Users\Yerassyl\Desktop\makhanbay7\domen\reg.html" class="exit-btn">
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\exit.png" alt="Exit" />
+        </a>
+    </header>
+
+    <nav>
+        <a href="https://www.hltv.org/events">Турнирлер</a>
+        <a href="https://www.hltv.org/ranking/teams/2024/november/11">Командалар</a>
+        <a href="https://www.hltv.org/players"> Ойыншылар </a>
+        <div class="dropdown">
+        <button> Қосымша ▼</button>
+        <div class="dropdown-content">
+            <a href="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Maps.html"> Карталар </a>
+            <a href="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Highlihts.html"> Үздік сәттер </a>
+        </div>
+    </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <a href="https://www.counter-strike.net/cs2"> 
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Снимок экрана 2024-11-12 211037.png"> </a>
+        </section>
+        <section>
+            <h2>CS2 киберспорты туралы</h2>
+            <div class="categories">
+                <div class="category">
+                    <img src="https://pictures.ua.tribuna.com/image/1a5bd59b-9747-4a41-8a1a-788e832989d6">
+                    <h3>Турнирлер</h3>
+                    <p>CS2-ның басты киберспорттық турнирі - Major.</p>
+                </div>
+                <div class="category">
+                    <img src="https://steamuserimages-a.akamaihd.net/ugc/848220742821493074/6FD0B287849301D2F27868F83AA16754437BB1E4/">
+                    <h3>Командалар</h3>
+                     <p>Әлемдегі үздік CS2 командалары</p>
+                    <a href="https://www.cybersport.ru/teams/cs2">Толығырақ</a>
+                </div>
+                <div class="category">
+                    <img src="https://vkplay.ru/pre_0x736_resize/hotbox/content_files/Stories/2023/06/06/77d8203bae4c48bfaf1241107b091c5e.jpg?quality=85">
+                    <h3>Ойыншылар</h3>
+                    <p>CS2 киберспортындағы үздік ойыншылар</p>
+                    <a href="https://www.cybersport.ru/players/cs2">Толығырақ</a>
+                </div>
+                <div class="category">
+                    <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\photo_2024-09-29_23-31-15.jpg">
+                    <h3>Нәтижелер</h3>
+                    <p>G2 командасының соңғы жеңісі - $200 000</p>
+                </div>
+            </div>
+        </section>
+
+          <div class="content-wrapper">
+    <div class="left-section">
+      <h1>Ойын режимдері</h1>
+      <p>Сіз бұл жерге кіріп өзіңіздің скилл деңгейіңізді көтере аласыз. Ол үшін жәй ғана батырманы бас!</p>
+      <a href="https://cybershoke.net/ru/cs2" target="_blank">  
+        <button class="try-button">Летсгоу!)</button>
+      </a>
+    </div>
+
+    <div class="floating-skins">
+      <div class="Chill guy">
+        <img src="https://nztcdn.com/files/74e24359-f60c-4a28-9e71-5b3995af6ce1.webp" />
+        <p>Тым болмағанда<br> боттан жақсы болсай</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".skin").forEach((skin) => {
+      skin.addEventListener("mousemove", (e) => {
+        const rect = skin.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        skin.style.transform = `rotateY(${x / 20}deg) rotateX(${-y / 20}deg)`;
+      });
+
+      skin.addEventListener("mouseleave", () => {
+        skin.style.transform = "rotateY(0) rotateX(0)";
+      });
+    });
+  </script>
+
+
+    </main>
+    <section class="slider-section">
+    <h2>Қарулар</h2>
+    <div class="slider-container">
+        <button id="prev" class="nav-btn"></button>
+        <div class="slider">
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\AWP.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\ak47.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\deagle.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\M4S.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\mac10.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Ssg.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\m4.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\kinfe.jpg">
+            </div>
+            <div class="slide">
+                <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\gloves.jpg">
+            </div>
+        </div>
+        <button id="next" class="nav-btn"></button>
+    </div>
+</section>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
+
+    let currentIndex = 0;
+
+    function updateSlides() {
+        const offset = -currentIndex * 100;
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(${offset}%)`;
+        });
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlides();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlides();
+    });
+
+    updateSlides();
+</script>
+
+    <footer>
+        <div>CS2 киберспорт турнирлері жайлы жаңалықтар мен жарнамалар</div>
+        <div class="footer-links">
+            <div>
+                <h4>Біз туралы</h4>
+                <p>CS2 киберспорт әлеміндегі біздің мақсаттарымыз бен міндеттеріміз.</p>
+            </div>
+            <div>
+                <h4>Қатысу</h4>
+                <p>CS2 киберспортында қалай қатысуға болады?
+               </p>
+            </div>
+            <div>
+                <h4>Қызықты фактілер</h4>
+                <p>CS2 ойындары туралы қызықты ақпарат пен статистика.</p>
+            </div>
+        </div>
+        <div>
+            <h4>Барлық ақпарат:</h4>
+            <a href="https://www.cybersport.ru"> 
+            <p color="ebebeb"> Cybersport.ru</a></p>
+        </div>
+    </footer>
+</body>
+</html>

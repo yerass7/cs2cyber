@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Киберспорт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282c34;
+            color: #f8f9fa;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin-left: 20px;
+        }
+        .exit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .exit-btn img {
+            width: 60px;
+            height: 40px;
+        }   
+        .maps-section {
+        padding: 30px;
+        background-color: #282c34;
+        text-align: center;
+        color: #333;
+        margin-top: 10px;
+        }
+
+        .maps-section h2 {
+        color: #ffdd57;
+        text-shadow: 1px 1px 3px #000;
+        margin-bottom: 20px;
+        }
+        .maps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .map {
+        background-color: #495057;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        padding: 15px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease;
+        }
+
+        .map:hover {
+        transform: scale(1.1) rotateY(10deg);
+        }
+
+        .maps img {
+        width: 100px;
+        height: auto;
+        border-radius: 5px;
+        margin-right: 15px;
+        }
+
+        .map h3 {
+        text-align: left;
+        color: #ffdd57;
+        margin: 0;
+        font-size: 1.2em;
+        }
+
+        .maps p {
+        color: #ffdd57;
+        font-size: 0.9em;
+        line-height: 1.4;
+        }
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            margin-top: 70px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .footer-links div {
+            width: 30%;
+            text-align: left;
+        }
+        .footer-links div h4 {
+            margin-bottom: 10px;
+            color: #ffdd57;
+        }
+        .footer-links div p {
+            color: #d1d1d1;
+        }
+        footer a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CS2 Киберспорт</h1>
+          <a href="C:\Users\Yerassyl\Desktop\makhanbay7\domen\cs2.html" class="exit-btn">
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\nazad.png" alt="Exit" />
+        </a>
+    </header>
+    <section class="maps-section">
+<h2>Ойындағы топ карталар </h2>
+    <div class="maps">
+        <div class="map">
+            <img src="https://4.bp.blogspot.com/-bDuIARiuMA0/VTZiQs32cpI/AAAAAAAAFRE/iaGA3ctzY6w/s1600/the_miraga.png">
+            <div>
+                <h3>Mirage</h3>
+                <p> Карта ойын қауымдастығында ең танымал ретінде табылады. </p>
+            </div>
+        </div>
+        <div class="map">
+            <img src="https://developer.valvesoftware.com/w/images/9/94/De_ancient.png">
+            <div>
+                <h3>Ancient</h3>
+                <p> Лаңкестер картадағы раундтардың көпшілігінде жеңіске жетеді (51,4%)</p>
+            </div>
+        </div>
+        <div class="map">
+            <img src="https://developer.valvesoftware.com/w/images/b/be/De_inferno.png">
+            <div>
+                <h3>Inferno</h3>
+                <p> Inferno барлық атрибуттары бар классикалық бәсекелестік картасы</p>
+            </div>
+        </div>
+                <div class="map">
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Dust.png">
+            <div>
+                <h3>Dust 2</h3>
+                <p> Дау-дамайсыз, франчайзингтегі ең танымал және ойналатын карта. Бұл ойындағы теңдестірілген карта.</p>
+            </div>
+        </div>
+                <div class="map">
+            <img src="https://arcticboost.net/assets/img/maps_ico/map_icon_de_nuke.png">
+            <div>
+                <h3>Nuke</h3>
+                <p> Бәсекеге қабілетті маппулда басты орынға ие болады.</p>
+            </div>
+        </div>
+                <div class="map">
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Vertigo.png">
+            <div>
+                <h3>Vertigo</h3>
+                <p> Көптеген командаларға ыңғайсыздық тудыратын карталардың бірі.</p>
+            </div>
+        </div>
+                <div class="map">
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\anubis.png">
+            <div>
+                <h3>Anubis</h3>
+                <p> Карта Египеттегі шағын қалада өтеді.</p>
+            </div>
+        </div>
+                <div class="map">
+            <img src="C:\Users\Yerassyl\Desktop\makhanbay7\domen\Train.png">
+            <div>
+                <h3>Train</h3>
+                <p> Ойындағы жаңбыр ауа-райы бар жалғыз карта. </p>
+            </div>
+        </div>
+    </div>
+</section>
+    <footer>
+        <div>CS2 киберспорт турнирлері жайлы жаңалықтар мен жарнамалар</div>
+        <div class="footer-links">
+            <div>
+                <h4>Біз туралы</h4>
+                <p>CS2 киберспорт әлеміндегі біздің мақсаттарымыз бен міндеттеріміз.</p>
+            </div>
+            <div>
+                <h4>Қатысу</h4>
+                <p>CS2 киберспортында қалай қатысуға болады?
+               </p>
+            </div>
+            <div>
+                <h4>Қызықты фактілер</h4>
+                <p>CS2 ойындары туралы қызықты ақпарат пен статистика.</p>
+            </div>
+        </div>
+        <div>
+            <h4>Барлық ақпарат:</h4>
+            <a href="https://www.cybersport.ru"> 
+            <p color="ebebeb"> Cybersport.ru</a></p>
+        </div>
+    </footer>
+</body>
+</html>
